@@ -13,5 +13,15 @@
         <item>Gramos</item>
         <item>Libras</item>
     </string-array>
-</resources>
 
+    <!-- Unidades de distancia -->
+    <string-array name="unidades_distancia">
+        <item>Centímetros</item>
+        <item>Metros</item>
+        <item>Kilómetros</item>
+        <item>Pulgadas</item>
+        <item>Pies</item>
+        <item>Yardas</item>
+        <item>Millas</item>
+    </string-array>
+</resources>

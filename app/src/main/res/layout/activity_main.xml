@@ -1,140 +1,238 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="16dp">
+    android:fillViewport="true">
 
-    <!-- Sección de conversión de tiempo -->
-    <TextView
-        android:id="@+id/text_time_section"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Conversión de Tiempo"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:paddingBottom="8dp"/>
-
-    <!-- Input de valor para tiempo -->
-    <EditText
-        android:id="@+id/et_valor_tiempo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Valor en tiempo"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@id/text_time_section"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp" />
-
-    <!-- Spinner para origen de tiempo -->
-    <Spinner
-        android:id="@+id/spinner_origen_tiempo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/et_valor_tiempo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
-
-    <!-- Spinner para destino de tiempo -->
-    <Spinner
-        android:id="@+id/spinner_destino_tiempo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spinner_origen_tiempo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
-
-    <!-- Botón para conversión de tiempo -->
-    <Button
-        android:id="@+id/btn_convertir_tiempo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Convertir Tiempo"
-        app:layout_constraintTop_toBottomOf="@id/spinner_destino_tiempo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
-
-    <!-- Sección de conversión de peso -->
-    <TextView
-        android:id="@+id/text_peso_section"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Conversión de Peso"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/btn_convertir_tiempo"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="32dp"
-        android:paddingBottom="8dp"/>
-
-    <!-- Input de valor para peso -->
-    <EditText
-        android:id="@+id/et_valor_peso"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Valor en peso"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@id/text_peso_section"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp" />
-
-    <!-- Spinner para origen de peso -->
-    <Spinner
-        android:id="@+id/spinner_origen_peso"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/et_valor_peso"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
-
-    <!-- Spinner para destino de peso -->
-    <Spinner
-        android:id="@+id/spinner_destino_peso"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spinner_origen_peso"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
-
-    <!-- Botón para conversión de peso -->
-    <Button
-        android:id="@+id/btn_convertir_peso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Convertir Peso"
-        app:layout_constraintTop_toBottomOf="@id/spinner_destino_peso"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
-
-    <!-- Capa de fondo opacado -->
-    <FrameLayout
-        android:id="@+id/overlay"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000"
-        android:visibility="gone">
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".MainActivity"
+        android:padding="16dp">
 
-        <!-- Animación de Lottie -->
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottie_animation"
+        <!-- Sección de conversión de tiempo -->
+        <TextView
+            android:id="@+id/text_time_section"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:lottie_autoPlay="false"
-            app:lottie_loop="false"
-            android:visibility="gone"/>
-    </FrameLayout>
+            android:text="Conversión de Tiempo"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingBottom="12dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Input de valor para tiempo -->
+        <EditText
+            android:id="@+id/et_valor_tiempo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Valor en tiempo"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/text_time_section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="16dp" />
+
+        <!-- Spinner para origen de tiempo -->
+        <Spinner
+            android:id="@+id/spinner_origen_tiempo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_valor_tiempo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp" />
+
+        <!-- Spinner para destino de tiempo -->
+        <Spinner
+            android:id="@+id/spinner_destino_tiempo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/spinner_origen_tiempo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón para conversión de tiempo -->
+        <Button
+            android:id="@+id/btn_convertir_tiempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir Tiempo"
+            app:layout_constraintTop_toBottomOf="@id/spinner_destino_tiempo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- TextView para mostrar el resultado de tiempo -->
+        <TextView
+            android:id="@+id/tv_resultado_tiempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultado de tiempo"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_convertir_tiempo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Sección de conversión de peso -->
+        <TextView
+            android:id="@+id/text_peso_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conversión de Peso"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_resultado_tiempo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:paddingBottom="12dp"/>
+
+        <!-- Input de valor para peso -->
+        <EditText
+            android:id="@+id/et_valor_peso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Valor en peso"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/text_peso_section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="16dp" />
+
+        <!-- Spinner para origen de peso -->
+        <Spinner
+            android:id="@+id/spinner_origen_peso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_valor_peso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Spinner para destino de peso -->
+        <Spinner
+            android:id="@+id/spinner_destino_peso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/spinner_origen_peso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón para conversión de peso -->
+        <Button
+            android:id="@+id/btn_convertir_peso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir Peso"
+            app:layout_constraintTop_toBottomOf="@id/spinner_destino_peso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- TextView para mostrar el resultado de peso -->
+        <TextView
+            android:id="@+id/tv_resultado_peso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultado de peso"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_convertir_peso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Sección de conversión de distancia -->
+        <TextView
+            android:id="@+id/text_distancia_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conversión de Distancia"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_resultado_peso"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:paddingBottom="12dp"/>
+
+        <!-- Input de valor para distancia -->
+        <EditText
+            android:id="@+id/et_valor_distancia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Valor en distancia"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/text_distancia_section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="16dp" />
+
+        <!-- Spinner para origen de distancia -->
+        <Spinner
+            android:id="@+id/spinner_origen_distancia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/et_valor_distancia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Spinner para destino de distancia -->
+        <Spinner
+            android:id="@+id/spinner_destino_distancia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/spinner_origen_distancia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón para conversión de distancia -->
+        <Button
+            android:id="@+id/btn_convertir_distancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir Distancia"
+            app:layout_constraintTop_toBottomOf="@id/spinner_destino_distancia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- TextView para mostrar el resultado de distancia -->
+        <TextView
+            android:id="@+id/tv_resultado_distancia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultado de distancia"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_convertir_distancia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Capa de fondo opacado -->
+        <FrameLayout
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="gone">
+
+            <!-- Animación de Lottie -->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_animation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
