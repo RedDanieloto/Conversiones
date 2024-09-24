@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Unidades de tiempo -->
+    <string-array name="unidades_tiempo">
+        <item>Horas</item>
+        <item>Minutos</item>
+        <item>Segundos</item>
+    </string-array>
+
+    <!-- Unidades de peso -->
+    <string-array name="unidades_peso">
+        <item>Kilogramos</item>
+        <item>Gramos</item>
+        <item>Libras</item>
+    </string-array>
+</resources>
+
